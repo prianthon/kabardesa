@@ -3,7 +3,7 @@
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content">
 
-    <id.desa.feedex.widget.ColorPickerDialogPreference
+    <id.desa.kabar.widget.ColorPickerDialogPreference
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:dialogLayout="@layout/dialog_color_transparency_picker"
