@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="id.fred.feedex"
+          package="id.desa.feedex"
           android:installLocation="auto">
 
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -10,26 +10,26 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <permission
-        android:name="id.fred.feedex.provider.WRITE_PERMISSION"
+        android:name="id.desa.feedex.provider.WRITE_PERMISSION"
         android:protectionLevel="signature"/>
 
     <application
-        android:name="id.fred.feedex.MainApplication"
+        android:name="id.desa.feedex.MainApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/Theme.Light">
-        <service android:name="id.fred.feedex.service.RefreshService"/>
-        <service android:name="id.fred.feedex.service.FetcherService"/>
+        <service android:name="id.desa.feedex.service.RefreshService"/>
+        <service android:name="id.desa.feedex.service.FetcherService"/>
 
         <provider
-            android:name="id.fred.feedex.provider.FeedDataContentProvider"
-            android:authorities="id.fred.feedex.provider.FeedData"
+            android:name="id.desa.feedex.provider.FeedDataContentProvider"
+            android:authorities="id.desa.feedex.provider.FeedData"
             android:exported="true"
             android:writePermission="net.fred.feedex.provider.WRITE_PERMISSION"/>
 
         <activity
-            android:name="id.fred.feedex.activity.HomeActivity"
+            android:name="id.desa.feedex.activity.HomeActivity"
             android:label="@string/app_name"
             android:launchMode="singleTask">
             <intent-filter>
@@ -38,19 +38,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="id.fred.feedex.activity.AddGoogleNewsActivity"
+            android:name="id.desa.feedex.activity.AddGoogleNewsActivity"
             android:label="@string/google_news_title"
             android:launchMode="singleTask"/>
         <activity
-            android:name="id.fred.feedex.activity.AboutActivity"
+            android:name="id.desa.feedex.activity.AboutActivity"
             android:label="@string/about_flym"
             android:launchMode="singleTask"/>
         <activity
-            android:name="id.fred.feedex.activity.EditFeedsListActivity"
+            android:name="id.desa.feedex.activity.EditFeedsListActivity"
             android:label="@string/feeds"
             android:launchMode="singleTask"/>
         <activity
-            android:name="id.fred.feedex.activity.EntryActivity"
+            android:name="id.desa.feedex.activity.EntryActivity"
             android:configChanges="orientation|screenSize"
             android:launchMode="singleTask">
             <intent-filter>
@@ -60,16 +60,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="id.fred.feedex.activity.GeneralPrefsActivity"
+            android:name="id.desa.feedex.activity.GeneralPrefsActivity"
             android:label="@string/menu_settings"
             android:launchMode="singleTask"/>
-        <activity android:name="id.fred.feedex.widget.WidgetConfigActivity">
+        <activity android:name="id.desa.feedex.widget.WidgetConfigActivity">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
             </intent-filter>
         </activity>
         <activity
-            android:name="id.fred.feedex.activity.EditFeedActivity"
+            android:name="id.desa.feedex.activity.EditFeedActivity"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.EDIT"/>
@@ -88,7 +88,7 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name="id.fred.feedex.widget.WidgetProvider">
+        <receiver android:name="id.desa.feedex.widget.WidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
@@ -98,7 +98,7 @@
                 android:resource="@xml/widgetinfo"/>
         </receiver>
 
-        <receiver android:name="id.fred.feedex.widget.TickerWidgetProvider">
+        <receiver android:name="id.desa.feedex.widget.TickerWidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
@@ -109,29 +109,29 @@
         </receiver>
 
         <service
-            android:name="id.fred.feedex.widget.WidgetService"
+            android:name="id.desa.feedex.widget.WidgetService"
             android:permission="android.permission.BIND_REMOTEVIEWS"/>
 
-        <service android:name="id.fred.feedex.widget.TickerWidgetService"/>
+        <service android:name="id.desa.feedex.widget.TickerWidgetService"/>
 
-        <receiver android:name="id.fred.feedex.receiver.BootCompletedBroadcastReceiver">
+        <receiver android:name="id.desa.feedex.receiver.BootCompletedBroadcastReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
-        <receiver android:name="id.fred.feedex.receiver.ConnectionChangeReceiver">
+        <receiver android:name="id.desa.feedex.receiver.ConnectionChangeReceiver">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
             </intent-filter>
         </receiver>
-        <receiver android:name="id.fred.feedex.service.RefreshService$RefreshAlarmReceiver"/>
+        <receiver android:name="id.desa.feedex.service.RefreshService$RefreshAlarmReceiver"/>
 
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version"/>
 
         <service
-            android:name="id.fred.feedex.wear.SendDataService">
+            android:name="id.desa.feedex.wear.SendDataService">
             <intent-filter>
                 <action android:name="com.google.android.gms.wearable.BIND_LISTENER"/>
             </intent-filter>
